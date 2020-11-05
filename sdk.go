@@ -25,12 +25,15 @@ func (l *LanIpRegistrants) Registered() {
 			if err != nil {
 				log.Println("Registered-recover:", err)
 			}
+			//log.Println("Registered-recover:", err)
 			time.Sleep(time.Second * 10)
 			l.Registered()
 		}()
 
 		for {
 			ips := getLocalIP()
+
+			//log.Println("Registered-ips:", ips)
 			for e := range ips {
 
 				httpdo := HttpDo{
