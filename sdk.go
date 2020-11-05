@@ -38,12 +38,12 @@ func (l *LanIpRegistrants) Registered() {
 						"lan_ip": ips[e],
 					},
 				}
-				data, err := httpdo.Post()
+				_, err := httpdo.Post()
 				if err != nil {
 					log.Println(err)
 					continue
 				}
-				log.Println("data:", l.Group, string(data))
+				//log.Println("data:", l.Group, string(data))
 
 			}
 			time.Sleep(time.Minute / 2)
