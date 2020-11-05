@@ -21,7 +21,10 @@ func (l *LanIpRegistrants) RegisteredSync() {
 func (l *LanIpRegistrants) Registered() {
 	go func() {
 		defer func() {
-			recover()
+			err := recover()
+			if err != nil {
+				log.Println("Registered-recover:", err)
+			}
 			time.Sleep(time.Second * 10)
 			l.Registered()
 		}()
