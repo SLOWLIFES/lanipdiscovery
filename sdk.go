@@ -41,7 +41,6 @@ func (l *LanIpRegistrants) Registered() {
 				_, err := httpdo.Post()
 				if err != nil {
 					log.Println(err)
-					continue
 				}
 				//log.Println("data:", l.Group, string(data))
 
